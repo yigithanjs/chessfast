@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next"
 import Link from "next/link";
 
 export default function BrowseLayout({ children }) {
@@ -21,6 +22,7 @@ export default function BrowseLayout({ children }) {
             </nav>
             </header>
             <main>{children}</main>
+            <Analytics />
         </>
   );
 }
