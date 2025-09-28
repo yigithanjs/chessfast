@@ -3,7 +3,7 @@ export const exploreItems = [
     count: 1,
     slug: "visualization",
     title: "Visualization Explained",
-    description: "Is it possible to improve your visualization skills? Let's find out",
+    description: "Why do GMs stare at ceilings mid-game? Because they see the board in their head. How?",
     tags: ["Explained"],
     content: [ 
       "Visualization in chess is one of those mysterious superpowers that separates casual players from serious ones. It feels like some players can see the board with their eyes closed, while the rest of us struggle to remember where our knight went three moves ago. The so‑called 'secret' is that there isn’t one magical hack. It’s built like a muscle. Slowly, painfully, and with lots of sweat equity. But there are smart ways to train it.",
@@ -55,7 +55,7 @@ export const exploreItems = [
     count: 2,
     slug: "talking-to-your-pieces",
     title: "Talking to Your Pieces",
-    description: "A trick that can instantly level up your play: ask your pieces if they’re happy. Then fix the unhappy ones",
+    description: "Your pieces talk. Most of the time, they’re screaming. Are you listening?",
     tags: ["Strategy", "Mindset"],
     content: [ "Talking to your pieces’ sounds like something made for kids, but it’s actually a sharp thinking method that works all the way up to the top level. What looks playful on the surface builds the kind of board awareness even grandmasters rely on",
       "The idea was popularized by Swiss grandmaster Noël Studer, who says his coach taught it to him when he was only ten, back in 2006. And he’s not the only one. Grandmaster Yasser Seirawan has also mentioned using this method very consciously during his own games.",
@@ -104,7 +104,7 @@ export const exploreItems = [
     count: 3,
     slug: "hypermodernism",
     title: "Hypermodern Chess",
-    description: "A century later, has hypermodern kept being modern?",
+    description: "Was Steinitz wrong? How strong was Hypermodernism, and does it still matter?",
     tags: ["History", "Fun Fact"],
     content: [
       "Wilhelm Steinitz gave chess a scientific foundation. He taught us to control the center with pawns, accumulate small advantages, and only attack with a clear edge.",
@@ -149,7 +149,7 @@ export const exploreItems = [
     count: 4,
     slug: "general-mistakes",
     title: "2 Pawn Mistakes to Avoid",
-    description: "Avoid these pawn habits that ruin your game",
+    description: "Two pawn moves quietly ruin games. Do you know them?",
     tags: ["Openings", "Beginner", "Tips", "Middlegame"],
     content: [
       "Everyone has heard the advice: 'develop your pieces,' 'control the center.' But those lines are too vague to actually guide your play. What really helps is spotting the mistakes you keep making without realizing it.",
@@ -190,7 +190,7 @@ export const exploreItems = [
     count: 5,
     slug: "opening-preparation",
     title: "What's Opening Prep ",
-    description: "What is opening preparation, and how to do it effectively?",
+    description: "Memorizing moves or mastering ideas? What prep really means.",
     tags: ["Opening", "Tips"],
     content: [
       "Imagine you’re watching a world championship chess game. You tell yourself, 'I’m going to study this game carefully.' The players shake hands and begin. White pushes the pawn to e4, and Black replies with c5. You think, 'Aha, that’s the Sicilian Defense. I know this one!'",
@@ -223,7 +223,7 @@ export const exploreItems = [
     count: 6,
     slug: "chess-is-solved",
     title: "Is Chess Solved?",
-    description: "Has AI solved chess? Not quite, but engines have changed everything. Explore how.",
+    description: "Tic-Tac-Toe is solved. Checkers is solved. What about chess?",
     tags: ["Endgame", "Engines"],
     content: [
       "Tic-Tac-Toe is solved. Checkers is solved. What about chess? Is it solved, or how close are we? ",
@@ -251,7 +251,7 @@ export const exploreItems = [
     count: 7,
     slug: "modern-school-of-chess",
     title: "The Modern School of Chess",
-    description: "They call my play timid. I call theirs premature. - Wilhelm Steinitz.",
+    description: "They called him timid. He called them premature. Wilhelm Steinitz. Killer of Romantic chess.",
     tags: ["History", "Fun Fact"],
     content: [
       "Meet Wilhelm Steinitz, the father of positional chess and the figure who single-handedly ended the Romantic Era of the game.",
@@ -342,7 +342,7 @@ export const exploreItems = [
     count: 8,
     slug: "humans-vs-computers",
     title: "Humans vs Computers",
-    description: "Does playing against engines help or hurt your chess? The psychology behind it.",
+    description: "Does playing against engines help or hurt your chess? Could it be a shortcut to mastery?",
     tags: ["Engines", "Psychology"],
     content: [
       "Meet Bob.",
@@ -370,7 +370,7 @@ export const exploreItems = [
     count: 9,
     slug: "tactics-vs-strategy",
     title: "Tactics vs Strategy",
-    description: "Chess is 99% tactics, right? Maybe not. Explore both sides of the debate.",
+    description: "Can tactics alone make you a master? And what even is tactics?",
     tags: ["Tactics", "Strategy"],
     content: [
       "Have you ever heard the saying, 'Chess is 99% tactics?' It's a famous line often credited to  Richard Teichmann, and it's a belief that has echoed through the chess world for generations.",
@@ -414,7 +414,7 @@ export const exploreItems = [
     count: 10,
     slug: "romantic-era-of-chess",
     title: "Romantic Era of Chess",
-    description: "There were no engines, no theories. Welcome to the romantic era of chess.",
+    description: "There were no engines, no databases. Just chaos and beuty. Welcome to the romantic era of chess.",
     tags: ["History", "Fun Fact"],
     content: [
       "You are sitting in a quiet café in Paris. The air is warm and hazy with cigar smoke. A group of gentlemen in waistcoats lean over polished wooden boards, wine glasses resting at their elbows. Coins clink as bets are laid. ",
@@ -484,7 +484,6 @@ export const tags = [
   "Middlegame",
   "Endgame",
   "Engines",
-  "Grandmasters",
   "Tactics",
   "History",
   "Fun Fact"
