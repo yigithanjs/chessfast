@@ -21,7 +21,7 @@ export default function ChessBoardView({ fen, className }) {
       for (const entry of entries) {
         const w = entry.contentRect.width;
         // Keep the board square with sensible min/max, slightly smaller than container
-        setSize(Math.max(260, Math.min(520, Math.floor(w * 0.9))));
+        setSize(Math.max(240, Math.min(460, Math.floor(w * 0.82))));
       }
     });
     ro.observe(el);

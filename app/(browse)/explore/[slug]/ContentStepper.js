@@ -63,17 +63,82 @@ export default function ContentStepper({ title, content }) {
 
   const atEnd = visibleCount >= items.length;
 
+  const adjustScrollForCurrentStep = () => {
+    const idx = visibleCount - 1;
+    if (idx < 0) return;
+    const last = paraRefs.current[idx];
+    if (!last) return;
+    const behavior = "smooth";
+    const isFenStep = last.dataset?.fen === "true";
+    const fallbackScroll = () => {
+      try {
+        last.scrollIntoView({ behavior, block: "center" });
+      } catch {
+        last.scrollIntoView();
+      }
+    };
+    const container = containerRef.current;
+    if (!isFenStep || !container) {
+      fallbackScroll();
+      return;
+    }
+    const scrollToReveal = () => {
+      const containerRect = container.getBoundingClientRect();
+      const nodeRect = last.getBoundingClientRect();
+      const bottomMargin = isFullscreen ? 120 : 96;
+      const topMargin = 32;
+      const overshoot = nodeRect.bottom + bottomMargin - containerRect.bottom;
+      const undershoot = containerRect.top - (nodeRect.top - topMargin);
+      let delta = 0;
+      if (overshoot > 0) {
+        delta = overshoot;
+      } else if (undershoot > 0) {
+        delta = -undershoot;
+      }
+      if (delta === 0) return;
+      const maxScroll = container.scrollHeight - container.clientHeight;
+      const target = Math.max(0, Math.min(container.scrollTop + delta, maxScroll));
+      try {
+        container.scrollTo({ top: target, behavior });
+      } catch {
+        container.scrollTop = target;
+      }
+    };
+    const hasWindow = typeof window !== "undefined";
+    let timeoutId;
+    const runAdjustments = () => {
+      scrollToReveal();
+      if (hasWindow) {
+        timeoutId = window.setTimeout(scrollToReveal, 160);
+      }
+    };
+    let rafId;
+    if (hasWindow && typeof window.requestAnimationFrame === "function") {
+      rafId = window.requestAnimationFrame(runAdjustments);
+    } else {
+      runAdjustments();
+    }
+    return () => {
+      if (hasWindow && timeoutId) window.clearTimeout(timeoutId);
+      if (hasWindow && rafId && typeof window.cancelAnimationFrame === "function") {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
+  };
+
   // Auto-scroll to the most recently revealed paragraph (skip on initial mount)
   useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
       return;
     }
-    const last = paraRefs.current[visibleCount - 1];
-    if (last) {
-      last.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
+    return adjustScrollForCurrentStep();
   }, [visibleCount]);
+
+  useEffect(() => {
+    if (!didMountRef.current) return;
+    return adjustScrollForCurrentStep();
+  }, [isFullscreen]);
 
   // Speak the current paragraph if voice mode is on (skip FEN)
   useEffect(() => {
@@ -177,7 +242,12 @@ export default function ContentStepper({ title, content }) {
           {items.slice(0, visibleCount).map((paragraph, index) => {
             const fenLike = isFen(paragraph);
             return (
-              <div key={index} ref={(el) => (paraRefs.current[index] = el)} className="cf-snap-item">
+              <div
+                key={index}
+                ref={(el) => (paraRefs.current[index] = el)}
+                className="cf-snap-item"
+                data-fen={fenLike ? "true" : undefined}
+              >
                 {fenLike ? (
                   <ChessBoardView fen={paragraph.trim()} className="my-6" />
                 ) : (
