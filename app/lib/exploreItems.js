@@ -472,7 +472,7 @@ export const exploreItems = [
     count: 11,
     slug: "think-like-steinitz",
     title: "Think Like Wilhelm Steinitz",
-    description: "Learn Steinitz’s core chess principles through an analysis of his World Championship rematch game against Chigorin",
+    description: "Learn Steinitz’s core principles through his World Championship rematch with Chigorin",
     tags: ["History", "Tips"],
     content: [
       "Wilhelm Steinitz was the first official World Champion and the father of modern positional chess. He proved that wild attacking play isn’t the only way to win. Instead, he taught that chess is logical, balanced, and governed by clear principles. In this lesson, we won’t focus on his biography. We’ll focus on how to think like him. ",
