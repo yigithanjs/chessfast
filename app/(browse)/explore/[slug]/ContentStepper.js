@@ -5,6 +5,13 @@ import dynamic from "next/dynamic";
 const ChessBoardView = dynamic(() => import("@/app/components/ChessBoardView"), { ssr: false });
 import clsx from "clsx";
 
+const PRELOAD_FENS = [
+  "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "r1bqk1nr/pppp1ppp/2n5/2b1p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 2 5",
+  "r3k2r/ppp2ppp/2n1bn2/3qp3/3P4/2N1BN2/PPP2PPP/R2Q1RK1 w kq - 4 11",
+  "3r2k1/1p3pp1/p1rqpb1p/2R5/3P1P2/PP3R1P/1B4PK/3Q4 w - - 0 26"
+];
+
 export default function ContentStepper({ title, content }) {
   const items = useMemo(() => Array.isArray(content) ? content : [], [content]);
   const [visibleCount, setVisibleCount] = useState(items.length > 0 ? 1 : 0);
@@ -17,6 +24,7 @@ export default function ContentStepper({ title, content }) {
   const [isHydrated, setIsHydrated] = useState(false);
   const [ttsSupported, setTtsSupported] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const preloadFenRef = useRef(PRELOAD_FENS[Math.floor(Math.random() * PRELOAD_FENS.length)]);
   useEffect(() => {
     setIsHydrated(true);
     try {
@@ -202,6 +210,13 @@ export default function ContentStepper({ title, content }) {
           : "mt-7 w-[90%] ml-auto mr-auto py-8 lg:w-[950px] xl:w-[1150px] 2xl:w-[1300px] shadow-[6px_6px_1px_0_rgba(0,0,0,0.25)] xl:shadow-[8px_8px_1px_0_rgba(0,0,0,0.25)] h-[clamp(460px,72dvh,820px)] sm:h-[clamp(500px,70vh,820px)]"
       )}
     >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none opacity-0"
+        style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}
+      >
+        <ChessBoardView fen={preloadFenRef.current} />
+      </div>
       {/* Fullscreen toggle button */}
       <button
         onClick={() => setIsFullscreen((v) => !v)}
