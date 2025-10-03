@@ -227,9 +227,10 @@ export default function ContentStepper({ title, content }) {
       </button>
       <div
         ref={containerRef}
-        className="flex-1 w-full overflow-y-auto mt-2 px-6 md:px-24 xl:px-48 2xl:px-64 pb-36 cf-scroll"
+        className={clsx("flex-1 w-full overflow-y-auto mt-2 pb-36 cf-scroll",
+          isFullscreen ? "px-6" : "px-6 md:px-24 xl:px-48 2xl:px-64")}
       >
-        <div className="space-y-12 md:space-y-14">
+        <div className="space-y-12 md:space-y-14 md:mx-auto md:w-[500px] lg:w-[600px] xl:w-[700px] 2xl:w-[800px]">
           <h1 className="text-xl lg:text-2xl font-black text-center">{title}</h1>
           <div className="flex items-center justify-center gap-3 relative bottom-6">
             <button

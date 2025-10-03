@@ -723,6 +723,32 @@ export const exploreItems = [
       "And that's the Caro Kann 101 for you. Try it on some games. See if you like it. ",
       "Thanks for reading!",
     ]
+  } ,
+  {
+    count: 13,
+    slug: "chess-myths",
+    title: "5 Chess Myths",
+    description: "we’ll debunk five of the biggest chess myths and show what really makes players strong.",
+    tags: ["Fun Fact", "Psychology", "Beginner"],
+    content: [
+      "In this lesson we'll debunk five of the biggest chess myths and show what really makes players strong. Let's get begin",
+      "#1 BLITZ RUINS YOUR CHESS",
+      "No, blitz doesn’t ruin your chess. Your bad chess ruins your chess. Blitz just helps you discover those flaws faster. If anything, blitz is like a mirror: it shows you that yes, you really do hang pieces in under 20 seconds.", 
+      "Your chess strength mostly comes from pattern recognition and how many positions you’re familiar with. Since blitz doesn’t give you enough time to calculate deeply, you rely more on those patterns to guide your play.",
+      "But don't spam games. Learn from your mistakes. ",
+      "#2 CHESS MAKES YOU SMARTER",
+      "The idea is cute: Masters see all those moves; if you get better at chess, your thinking will improve massively. Well, as we said before, your strength comes mostly from pattern recognition and how many positions you're familiar with. So those masters don't invent new moves. They just know the ideas by heart, and their intuition just shows them.",
+      "Sure, chess can sharpen focus, memory, and patience. But you will feel like the same person you were before playing chess. So if you are a parent, don't force your child to play chess to get an A on a math test.",
+      "#3 GRANDMASTERS SEE 25 MOVES AHEAD",
+      "This is a common misconception that generally comes from people who just like chess but don't know its world. No human can calculate that deep. Masters don't see more. They see better.",
+      "rn1qkb1r/pp2pppp/5n2/3p1b2/2PP4/2N5/PP3PPP/R1BQKBNR w KQkq - 3 6",
+      "To give an example, when you look at this position, you may feel lost or need a couple of times to evaluate it. But when a master sees this position, they will think, 'Oh, this is probably from the Exchange Caro-Kann. White has entered the c4 line. But the bishop on f5 should be wrong. The b7 pawn is weak. And Qb3 is typical in these kinds of positions. Let me look at it.' Then they look at it, make sure it's not losing, and play it. All while you were thinking of Nf3, Bd3, cxd5, and c5.",
+      "The only time they calculate deeply is when the move is forcing. It means when you make a move, your opponent has only one reply, and you can keep going with the forcing lines. But trust me, you can go deep in those kinds of positions as well. They just have better visualization, though.",
+      "#4 BEGINNERS SHOULDN'T STUDY OPENINGS",
+      "This advice is dangerous! Beginners shouldn't memorize 25 moves of the Sicilian Najdorf, but they absolutely need to understand the opening principles, learn simple openings. And each opening teaches you new things. Exploring new openings is always good. Unless you learn a trap and try to do it over and over again.",
+      "#5 CHESS IS PURELY MENTAL",
+      "Not really. Watch a GM in round 10: they’re tired, jittery, fueled by coffee, and still have to keep their head clear. Stamina and nerves matter just as much as brainpower. Carlsen plays soccer and hikes for a reason. Chess won’t give you muscles, but if you want to stay sharp after six hours at the board, being fit definitely helps.",
+    ]
   }
 ];
 
