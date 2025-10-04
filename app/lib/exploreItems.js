@@ -650,7 +650,7 @@ export const exploreItems = [
       "That’s the basic Caro-Kann setup. If you notice, the light-squared bishops way is completely open. Unlike in the French defense. ",
       "Now let’s explore White’s possible replies. ",
       "No heavy theory or memorization here. We’ll just work through the ideas together.",
-      "Black challanged white's e4 pawn. So white has 3 options.",
+      "Black challenged white's e4 pawn. So white has 3 options.",
       "1- Push the pawn",
       "2- Take on d5",
       "3- Protect the pawn",
@@ -747,7 +747,7 @@ export const exploreItems = [
       "#4 BEGINNERS SHOULDN'T STUDY OPENINGS",
       "This advice is dangerous! Beginners shouldn't memorize 25 moves of the Sicilian Najdorf, but they absolutely need to understand the opening principles, learn simple openings. And each opening teaches you new things. Exploring new openings is always good. Unless you learn a trap and try to do it over and over again.",
       "#5 CHESS IS PURELY MENTAL",
-      "Not really. Watch a GM in round 10: they’re tired, jittery, fueled by coffee, and still have to keep their head clear. Stamina and nerves matter just as much as brainpower. Carlsen plays soccer and hikes for a reason. Chess won’t give you muscles, but if you want to stay sharp after six hours at the board, being fit definitely helps.",
+      "Not really. Watch a GM in round 10: they’re tired, jittery, fueled by coffee, and still have to keep their head clear. Stamina and nerves matter just as much as brainpower. Chess won’t give you muscles, but if you want to stay sharp after six hours at the board, being fit definitely helps.",
     ]
   }
 ];
