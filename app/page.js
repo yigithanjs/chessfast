@@ -1,2 +1,12 @@
 import { redirect } from "next/navigation";
-export default function Home() { redirect("/daily"); }
+
+export const metadata = {
+  title: "ChessFast",
+  description: "Learn chess quickly with daily lessons and curated training paths.",
+};
+
+export default function Home() {
+  redirect("/daily");
+}
+
+
