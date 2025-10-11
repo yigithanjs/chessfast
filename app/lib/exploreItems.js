@@ -1133,6 +1133,28 @@ export const exploreItems = [
       "I want to end the session with a quote from Morphy. 'Help your pieces so they can help you.'",
       "Thanks for reading!"
     ]
+  },
+      {
+    count: 19,
+    slug: "knights-before-bishops",
+    title: "Knights Before Bishops",
+    description: "You have probably heard this advice. And followed it. But do you know why? ",
+    tags: ["Tips", "Beginner"],
+    content: [
+      "Knights before bishops is more of a handy rule of thumb, not a strict law. It’s been around for ages. Even Emanuel Lasker was giving this advice to young players back in 1917.",
+      "First reason: Bishops' optimal placement is heavily dependant on the position.",
+      "r1bqkb1r/pp2pppp/2n2n2/3p4/2PP4/2N1B3/PP3PPP/R2QKBNR b KQkq - 4 6",
+      "It’s Black to move, and we’re already on move 6... yet both bishops are still sleeping. If Black plays e6 now, the light-squared bishop gets trapped behind the pawns. But pushing it out early doesn’t feel right either, because its ideal square is g4, where it can pin the knight. When you place a bishop on a bad square too soon, you’ll usually regret it later. Moving it again costs you time, and time is everything in the opening.",
+      "Here, Black plays g6... and that brings us to the second reason: bishops have more options when it comes to development. In this position, Black decides to fianchetto the dark-squared bishop, placing it on the long diagonal.",
+      "r1bqkb1r/pp2pp1p/2n2np1/3p4/2PP4/2N1B3/PP3PPP/R2QKBNR w KQkq - 0 7",
+      "Knights on the other hand usually goes to their Natural squares. f3/c3 for white. f6/c6 for black.",
+      "r1bqkb1r/pp2pp1p/2n2np1/3p4/2PP4/2N1BN2/PP3PPP/R2QKB1R b KQkq - 1 7",
+      "Notice how both knights already know exactly where they belong. They jump into action early, control the center, and help protect your king when you castle.",
+      "Bishops? They’re a bit more dramatic. They like to wait and see how the story unfolds before picking their diagonals.",
+      "That’s why developing knights first just makes sense — it’s consistent, flexible, and rarely backfires.",
+      "But remember, it’s a rule of thumb, not a handcuff. In openings like the London System, the bishop moves early because it fits the plan.",
+      "So the next time you’re unsure what to develop, remember: knights first, bishops later. You’ll never go wrong following Lasker’s old wisdom."
+    ]
   }
 ];
 
