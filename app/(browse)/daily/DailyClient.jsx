@@ -1,8 +1,9 @@
 "use client";
-import { useMemo, useEffect, useState } from "react";
+import { useMemo, useEffect, useState, useRef, useCallback } from "react";
 import { exploreItems } from "@/app/lib/exploreItems";
 import Link from "next/link";
 import Footer from "../Footer";
+import PlayableChessBoard from "@/app/components/PlayableChessBoard";
 
 function hash(str) {
   // tiny stable hash (FNV-1a-ish)
@@ -77,6 +78,84 @@ export default function DailyClient() {
     parts.push(`${timeLeft.s}s`);
     return `Next in ${parts.join(" ")}`;
   }, [timeLeft]);
+  const puzzleFens = useMemo(
+    () => [
+      "rnbqkbnr/pppp2pp/5p2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
+      "rnbqkbnr/pppp2pp/5p2/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
+      "rnbqkbnr/pppp2pp/8/4p3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
+      "rnbqkbnr/pppp2pp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KB1R b KQkq - 1 4"
+    ],
+    []
+  );
+  const [resetSignal, setResetSignal] = useState(0);
+  const [fenIndex, setFenIndex] = useState(0);
+  const showAnswerTimeouts = useRef([]);
+  const autoAdvanceTimeout = useRef(null);
+
+  useEffect(() => {
+    setFenIndex(0);
+  }, [puzzleFens]);
+
+  const clearTimers = useCallback(() => {
+    showAnswerTimeouts.current.forEach((t) => clearTimeout(t));
+    showAnswerTimeouts.current = [];
+    if (autoAdvanceTimeout.current) {
+      clearTimeout(autoAdvanceTimeout.current);
+      autoAdvanceTimeout.current = null;
+    }
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      clearTimers();
+    };
+  }, [clearTimers]);
+
+  const handleReset = useCallback(() => {
+    clearTimers();
+    setFenIndex(0);
+    setResetSignal((count) => count + 1);
+  }, [clearTimers]);
+
+  const handleShowAnswer = useCallback(() => {
+    clearTimers();
+    setFenIndex(0);
+    setResetSignal((count) => count + 1);
+
+    puzzleFens.forEach((_, idx) => {
+      if (idx === 0) return;
+      const timeout = setTimeout(() => {
+        setFenIndex(idx);
+        setResetSignal((count) => count + 1);
+      }, idx * 400);
+      showAnswerTimeouts.current.push(timeout);
+    });
+  }, [clearTimers, puzzleFens]);
+
+  const handleCorrectMove = useCallback(() => {
+    setFenIndex((idx) => {
+      const nextIndex = Math.min(idx + 1, puzzleFens.length - 1);
+
+      if (autoAdvanceTimeout.current) {
+        clearTimeout(autoAdvanceTimeout.current);
+        autoAdvanceTimeout.current = null;
+      }
+
+      const opponentIndex = nextIndex + 1;
+      if (opponentIndex < puzzleFens.length) {
+        autoAdvanceTimeout.current = setTimeout(() => {
+          setFenIndex(opponentIndex);
+          autoAdvanceTimeout.current = null;
+        }, 400);
+      }
+
+      return nextIndex;
+    });
+  }, [puzzleFens.length]);
+
+  const currentFen = puzzleFens[fenIndex] ?? puzzleFens[0];
+  const nextFen = fenIndex < puzzleFens.length - 1 ? puzzleFens[fenIndex + 1] : undefined;
+  const isFinalFen = fenIndex === puzzleFens.length - 1;
 
   return (
     <>
@@ -117,31 +196,62 @@ export default function DailyClient() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_300px_at_10%_-10%,rgba(255,255,255,0.06),transparent_60%),radial-gradient(600px_300px_at_90%_110%,rgba(0,0,0,0.35),transparent_60%)]" />
         </article>
 
-        {/* Up Next */}
-        <div className="flex items-center justify-between mt-12 mb-4">
-          <p className="text-sm font-medium tracking-widest uppercase text-white/60">Up Next</p>
-          <Link href="/explore" className="text-white/70 text-sm hover:text-white">Explore all</Link>
-        </div>
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {upNext.map((it, i) => (
-            <div
-              key={it.slug}
-              className="relative rounded-2xl overflow-hidden border border-white/10 p-5"
-              style={{ backgroundImage: "linear-gradient(160deg, rgba(173, 9, 110, 0.87) 0%, rgba(202, 35, 118, 0.6) 55%, rgba(185, 17, 73, 0.6) 100%)" }}
-            >
-              {it.tags?.[0] && (
-                <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white/10 text-white/80 relative right-1">{it.tags[0]}</span>
-              )}
-              <h3 className="text-lg md:text-xl font-bold text-white mt-3 mb-6">{it.title}</h3>
-              <Link href={`/explore/${it.slug}`} className="cursor-pointer text-white/90 hover:text-white font-medium">
-                Start {'->'}
-              </Link>
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(600px_300px_at_90%_120%,rgba(0,0,0,0.35),transparent_60%)]" />
+        {/* Puzzle Rush and Daily Puzzle Section */}
+        <section className="mt-[50px] flex flex-col xl:flex-row gap-15 relative w-full">
+          <div>
+            <h2 className="text-sm font-medium  uppercase tracking-widest text-white/60">CHESS CLASSICS RUSH</h2>
+            <p className="text-sm md:text-base text-white/50 mt-2 mb-[40px]">Improve your pattern recognition by solving must-know chess positions</p>
+            <div className="md:flex xl:w-[700px] 2xl:w-[820px]">
+              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] h-[247px] flex flex-col items-center justify-center gap-[35px] xl:gap-[60px] rounded-xl"
+              style={{ backgroundImage: "linear-gradient(to right, rgba(67, 145, 208, 0.5), rgba(153, 3, 138, 0.5)) "}}>
+                <span className="text-3xl xl:text-4xl 2xl:text-5xl">🔥</span>
+                <h1 className="text-lg font-md xl:text-xl 2xl:text-2xl font-bold">3 MINUTE BLITZ</h1>
+                <Link href={"daily/threeMinutesRush"} className="xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
+              </article>
+
+              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] md:ml-5 mt-5 md:mt-0 h-[247px] flex flex-col items-center justify-center gap-[35px]  xl:gap-[60px] rounded-xl"
+              style={{ backgroundImage: "linear-gradient(to right, rgba(255, 9, 99, 0.49), rgba(205, 53, 144, 0.49)) "}}>
+                <span className="text-3xl xl:text-4xl 2xl:text-5xl">🏕️</span>
+                <h1 className="text-lg font-md xl:text-xl 2xl:text-2xl font-bold">SURVIVAL</h1>
+                <Link href={"daily/survival"} className="xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
+              </article>
             </div>
-          ))}
+          </div>
+
+          <div>
+            <div className="flex flex-col justify-between xl:flex-row xl:items-center">
+              <h2 className="mb-2 text-sm font-medium uppercase tracking-widest text-white/60 xl:mb-0">
+                DAILY PUZZLE
+              </h2>
+              <div className="flex gap-2">
+                <button
+                  onClick={handleReset}
+                  className="cursor-pointer inline-flex items-center rounded-lg border border-white/15 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-white/75 transition hover:text-white hover:border-white/30"
+                >
+                  Reset
+                </button>
+                <button
+                  onClick={handleShowAnswer}
+                  className="cursor-pointer inline-flex items-center rounded-lg border border-pink-400/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-pink-200 transition hover:text-white hover:border-pink-300"
+                >
+                  Show Answer
+                </button>
+              </div>
+            </div>
+
+            <div style={{overflow: "hidden"}}>
+              <PlayableChessBoard
+                initialFen={currentFen}
+                solutionFen={nextFen}
+                onCorrectMove={handleCorrectMove}
+                resetSignal={resetSignal}
+                isFinalPosition={isFinalFen}
+                className="mt-6 w-full md:max-w-[390px] lg:max-w-[460px] xl:max-w-[520px]"
+              />
+            </div>
+          </div>
         </section>
 
-        <p className="text-center text-white/50 text-sm mt-10">New lesson comes daily. Lessons are short, practical, and stack into habits.</p>
       </main>
       <Footer active="daily" />
     </>

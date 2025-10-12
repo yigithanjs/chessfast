@@ -1,4 +1,5 @@
 import { Analytics } from "@vercel/analytics/next"
+import HeaderColor from "../components/HeaderColor";
 import Link from "next/link";
 
 export default function BrowseLayout({ children }) {
@@ -13,12 +14,7 @@ export default function BrowseLayout({ children }) {
                 </div>
 
             <nav className="hidden md:flex mr-5 md:mr-8 gap-5">
-                <Link href="/daily">
-                <button className="bg-violet-800 w-28 h-10 rounded cursor-pointer xl:text-lg hover:brightness-120 hover:-translate-y-0.5 hover:shadow-lg duration-[200ms]">Daily</button>
-                </Link>
-                <Link href="/explore">
-                <button className="bg-pink-700 w-28 h-10 rounded cursor-pointer xl:text-lg hover:brightness-120 hover:-translate-y-0.5 hover:shadow-lg duration-[200ms]">Explore</button>
-                </Link>
+                <HeaderColor/>
             </nav>
             </header>
             <main>{children}</main>
