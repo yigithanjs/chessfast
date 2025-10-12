@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function FooterBase({ active }) {
   const base = "h-12 flex items-center justify-center font-bold text-white";
   return (
-    <footer className="fixed bottom-0 w-full md:hidden">
+    <footer className="fixed bottom-0 w-full md:hidden z-100">
       <nav className="grid grid-cols-2 text-center">
         <Link
           href="/daily"
