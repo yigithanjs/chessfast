@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 export default function HeaderColor() {
   const pathname = usePathname();
   const isDaily = pathname === "/daily" || pathname === "/daily/";
-  const isExplore = pathname.startsWith("/explore");
+  const isExplore = pathname === "/explore" || pathname === "/explore/";
 
   return (
     <>
