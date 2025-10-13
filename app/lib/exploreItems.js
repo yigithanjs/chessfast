@@ -401,7 +401,7 @@ export const exploreItems = [
       "It’s White to move. Notice that there are no direct threats here. Nothing forces an immediate response. Instead, the challenge is to find a good long-term plan.",
       "This game was played between Magnus Carlsen and Fabiano Caruana. Magnus chose to go for a minority attack on the queenside.",
       "1r2r1k1/1pqn1ppp/p1p1bn2/3p4/P2P4/Q1NBPN1P/1P3PP1/R1R3K1 b - - 4 16",
-      "He began by placing his rook on the same file as his queen, and then he started advancing his a- and b-pawns.",
+      "He began by placing his rook on the same file as blacks queen, and then he started advancing his a- and b-pawns.",
       "r3r1k1/1pq2ppp/pnp1bn2/P2p4/1P1P4/Q1NBPN1P/5PP1/R1R3K1 b - - 0 18",
       "This example shows how different tactics and strategy really are. Tactics demand urgent, concrete moves. Strategy, on the other hand, is about building a plan and guiding the game over time. Both are essential. Without strategy, tactical chances don’t just magically appear.",
       "This is why we can’t really say chess is 99% tactics. Still, tactics are hugely important and can’t be ignored.",

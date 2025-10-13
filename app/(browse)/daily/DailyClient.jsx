@@ -80,10 +80,10 @@ export default function DailyClient() {
   }, [timeLeft]);
   const puzzleFens = useMemo(
     () => [
-      "rnbqkbnr/pppp2pp/5p2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 3",
-      "rnbqkbnr/pppp2pp/5p2/4N3/4P3/8/PPPP1PPP/RNBQKB1R b KQkq - 0 3",
-      "rnbqkbnr/pppp2pp/8/4p3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
-      "rnbqkbnr/pppp2pp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KB1R b KQkq - 1 4"
+      "2r5/1pp2rkp/p2pnppq/8/2P1PP2/1P2N1QP/P4PK1/3RR3 w - - 5 27",
+      "2r5/1pp2rkp/p2pnppq/5N2/2P1PP2/1P4QP/P4PK1/3RR3 b - - 6 27",
+      "2r4k/1pp2r1p/p2pnppq/5N2/2P1PP2/1P4QP/P4PK1/3RR3 w - - 7 28",
+      "2r4k/1pp2r1p/p2pnppN/8/2P1PP2/1P4QP/P4PK1/3RR3 b - - 0 28"
     ],
     []
   );
@@ -174,7 +174,6 @@ export default function DailyClient() {
           style={{ backgroundImage: "linear-gradient(160deg, #9700c9ce 0%, #2e215aff 55%, #251a3bff 100%)" }}
         >
           <div className="flex gap-2 mb-5">
-            <span className="px-2.5 py-1 rounded-full text-xs md:text-sm md:px-4 md:py-1.5 font-semibold bg-white/10 text-white/90">Daily</span>
             <span className="px-2.5 py-1 rounded-full text-xs md:text-sm md:px-4 md:py-1.5 font-semibold bg-white/10 text-white/80">Mini-lesson</span>
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white mb-3">{item.title}</h2>
@@ -200,20 +199,27 @@ export default function DailyClient() {
         <section className="mt-[50px] flex flex-col xl:flex-row gap-15 relative w-full">
           <div>
             <h2 className="text-sm font-medium  uppercase tracking-widest text-white/60">CHESS CLASSICS RUSH</h2>
-            <p className="text-sm md:text-base text-white/50 mt-2 mb-[40px]">Improve your pattern recognition by solving must-know chess positions</p>
+            <p className="text-sm md:text-base text-white/50 mt-2 mb-[40px]">Train your instincts with the most iconic positions every chess player should know.</p>
             <div className="md:flex xl:w-[700px] 2xl:w-[820px]">
-              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] h-[247px] flex flex-col items-center justify-center gap-[35px] xl:gap-[60px] rounded-xl"
-              style={{ backgroundImage: "linear-gradient(to right, rgba(67, 145, 208, 0.5), rgba(153, 3, 138, 0.5)) "}}>
+              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] h-[280px] flex flex-col items-center justify-center gap-[35px] xl:gap-[60px] rounded-xl"
+              style={{ background: "#54318bff "}}>
                 <span className="text-3xl xl:text-4xl 2xl:text-5xl">🔥</span>
-                <h1 className="text-lg font-md xl:text-xl 2xl:text-2xl font-bold">3 MINUTE BLITZ</h1>
-                <Link href={"daily/threeMinutesRush"} className="xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
+                <div className="text-center">
+                  <h1 className="mb-4 text-lg font-md xl:text-xl 2xl:text-2xl font-bold">3 MINUTE BLITZ</h1>
+                  <p className="px-10 text-white/70">3 minutes. Endless classics.</p>
+                </div>
+                
+                <Link href={"daily/threeMinutesRush"} className="hover:bg-neutral-800 transition xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
               </article>
 
-              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] md:ml-5 mt-5 md:mt-0 h-[247px] flex flex-col items-center justify-center gap-[35px]  xl:gap-[60px] rounded-xl"
-              style={{ backgroundImage: "linear-gradient(to right, rgba(255, 9, 99, 0.49), rgba(205, 53, 144, 0.49)) "}}>
+              <article className="xl:h-[352px] 2xl:h-[380px] md:w-[50%] md:ml-5 mt-5 md:mt-0 h-[280px] flex flex-col items-center justify-center gap-[35px]  xl:gap-[60px] rounded-xl"
+              style={{ background: "rgba(168, 32, 73, 1) "}}>
                 <span className="text-3xl xl:text-4xl 2xl:text-5xl">🏕️</span>
-                <h1 className="text-lg font-md xl:text-xl 2xl:text-2xl font-bold">SURVIVAL</h1>
-                <Link href={"daily/survival"} className="xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
+                <div className="text-center">
+                  <h1 className="mb-4 text-lg font-md xl:text-xl 2xl:text-2xl font-bold">SURVIVAL</h1>
+                  <p className="px-10 text-white/70">20 iconic positions. One life</p>
+                </div>
+                <Link href={"daily/survival"} className="hover:bg-neutral-800 transition xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
               </article>
             </div>
           </div>
