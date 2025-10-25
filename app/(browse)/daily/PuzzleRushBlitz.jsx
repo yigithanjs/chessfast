@@ -153,7 +153,7 @@ export default function PuzzleRushBlitz({ puzzles }) {
 
   return (
     <>
-      <main className='flex flex-col items-center lg:items-stretch lg:flex-row justify-center mt-20 mb-20 relative'>
+      <main className='flex flex-col items-center lg:items-stretch lg:flex-row justify-center mt-9 lg:mt-20 mb-20 relative'>
         {phase === 'ended' && <ResultPage score={score} highestCombo={highestCombo} resetGame={resetGame} mistakeCount={mistakeCount} failedPuzzles={failedPuzzles}/>} 
         <section className='relative'>
 
