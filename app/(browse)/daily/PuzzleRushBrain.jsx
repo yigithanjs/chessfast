@@ -210,6 +210,15 @@ export default function PuzzleRushBrain({
     ]
   );
 
+  const canDragPiece = useCallback(({ piece }) => {
+    const turn = gameRef.current?.turn?.();
+    if (!turn || !piece?.pieceType) {
+      return false;
+    }
+    const expectedPrefix = turn === "w" ? "w" : "b";
+    return piece.pieceType.startsWith(expectedPrefix);
+  }, []);
+
   // keep stepIndex sane if external changes happen
   useEffect(() => {
     if (!activeSequence) return;
@@ -222,6 +231,7 @@ export default function PuzzleRushBrain({
     <div ref={containerRef} className={className}>
       {position && (
         <Chessboard
+          key={`${sessionKey}-${currentIndex}`}
           boardWidth={boardSize}
           options={{
             id: "puzzle-rush-brain",
@@ -231,6 +241,7 @@ export default function PuzzleRushBrain({
             darkSquareStyle: { backgroundColor: "#b58863" },
             lightSquareStyle: { backgroundColor: "#f0d9b5" },
             onPieceDrop: handlePieceDrop,
+            canDragPiece,
             animationDurationInMs: stepIndex > 0 ? 200 : 0, // no tween for first frame
             showAnimations: stepIndex > 0,
           }}
