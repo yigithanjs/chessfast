@@ -209,7 +209,7 @@ export default function PuzzleRushBlitz({ puzzles }) {
             {sideToMove === 'white' ? 'white to move' : 'black to move'}
           </div>
           <div className='lg:hidden w-full px-1 mt-8'>
-            <p className='font-black'>Combo<span className={comboHighlightClass}>x{combo}</span></p>
+            <p className='font-black'>Combo <span className={comboHighlightClass}>x{combo}</span></p>
           </div>
         </section>
 
