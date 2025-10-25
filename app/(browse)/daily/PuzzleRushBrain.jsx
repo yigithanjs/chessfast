@@ -215,8 +215,8 @@ export default function PuzzleRushBrain({
     if (!turn || !piece?.pieceType) {
       return false;
     }
-    const expectedPrefix = turn === "w" ? "w" : "b";
-    return piece.pieceType.startsWith(expectedPrefix);
+    const isWhitePiece = piece.pieceType.startsWith("w");
+    return turn === "w" ? isWhitePiece : !isWhitePiece;
   }, []);
 
   // keep stepIndex sane if external changes happen
