@@ -216,5 +216,141 @@ export const puzzles = [
                 "r4r2/1b2bpk1/ppq1p3/2pp4/5PQ1/1P2P3/P1PP2PP/R4RK1 b - - 1 18",
                 "r4r2/1b2bp1k/ppq1p3/2pp4/5PQ1/1P2P3/P1PP2PP/R4RK1 w - - 2 19",
                 "r4r2/1b2bp1k/ppq1p3/2pp4/5PQ1/1P2PR2/P1PP2PP/R5K1 b - - 3 19"
+            ],
+            [
+                "r3k2r/pp1qn1pp/2p2p2/8/3P4/5N2/PP2QPPP/2R1R1K1 w kq - 0 17",
+                "r3k2r/pp1qn1pp/2p2p2/3P4/8/5N2/PP2QPPP/2R1R1K1 b kq - 0 17",
+                "r3k2r/pp1qn1pp/5p2/3p4/8/5N2/PP2QPPP/2R1R1K1 w kq - 0 18",
+                "r3k2r/pp1qn1pp/5p2/3p4/3N4/8/PP2QPPP/2R1R1K1 b kq - 1 18",
+                "r6r/pp1qnkpp/5p2/3p4/3N4/8/PP2QPPP/2R1R1K1 w - - 2 19",
+                "r6r/pp1qnkpp/4Np2/3p4/8/8/PP2QPPP/2R1R1K1 b - - 3 19"
+            ],
+            [
+                "r1r5/pp1qnkpp/4Np2/3p4/8/8/PP2QPPP/2R1R1K1 w - - 4 20",
+                "r1r5/pp1qnkpp/4Np2/3p4/6Q1/8/PP3PPP/2R1R1K1 b - - 5 20",
+                "r1r5/pp1qnk1p/4Npp1/3p4/6Q1/8/PP3PPP/2R1R1K1 w - - 0 21",
+                "r1r5/pp1qnk1p/5pp1/3p2N1/6Q1/8/PP3PPP/2R1R1K1 b - - 1 21",
+                "r1r1k3/pp1qn2p/5pp1/3p2N1/6Q1/8/PP3PPP/2R1R1K1 w - - 2 22",
+                "r1r1k3/pp1qR2p/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 b - - 0 22",
+                "r1r2k2/pp1qR2p/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 w - - 1 23",
+                "r1r2k2/pp1q1R1p/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 b - - 2 23",
+                "r1r3k1/pp1q1R1p/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 w - - 3 24",
+                "r1r3k1/pp1q2Rp/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 b - - 4 24",
+                "r1r4k/pp1q2Rp/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 w - - 5 25",
+                "r1r4k/pp1q3R/5pp1/3p2N1/6Q1/8/PP3PPP/2R3K1 b - - 0 25"
+            ],
+            [
+                "4rr1k/1ppb3p/2q1n1p1/p7/3b4/1BP1B3/PP3PP1/2KR1Q1R w - - 0 23",
+                "4rr1k/1ppb3p/2q1n1p1/p7/3R4/1BP1B3/PP3PP1/2K2Q1R b - - 0 23",
+                "4rr1k/1ppb3p/2q3p1/p7/3n4/1BP1B3/PP3PP1/2K2Q1R w - - 0 24",
+                "4rr1k/1ppb3R/2q3p1/p7/3n4/1BP1B3/PP3PP1/2K2Q2 b - - 0 24",
+                "4rr2/1ppb3k/2q3p1/p7/3n4/1BP1B3/PP3PP1/2K2Q2 w - - 0 25",
+                "4rr2/1ppb3k/2q3p1/p7/3n4/1BP1B3/PP3PP1/2K4Q b - - 1 25"
+            ],
+            [
+                "r2q1rk1/1b3pbp/pp3nn1/2p1p1N1/2B1P3/2P1B3/PP1NQPP1/2KR3R w - - 0 15",
+                "r2q1rk1/1b3pbN/pp3nn1/2p1p3/2B1P3/2P1B3/PP1NQPP1/2KR3R b - - 0 15",
+                "r2q1rk1/1b3pbn/pp4n1/2p1p3/2B1P3/2P1B3/PP1NQPP1/2KR3R w - - 0 16",
+                "r2q1rk1/1b3pbR/pp4n1/2p1p3/2B1P3/2P1B3/PP1NQPP1/2KR4 b - - 0 16",
+                "r2q1r2/1b3pbk/pp4n1/2p1p3/2B1P3/2P1B3/PP1NQPP1/2KR4 w - - 0 17",
+                "r2q1r2/1b3pbk/pp4n1/2p1p2Q/2B1P3/2P1B3/PP1N1PP1/2KR4 b - - 1 17",
+                "r2q1rk1/1b3pb1/pp4n1/2p1p2Q/2B1P3/2P1B3/PP1N1PP1/2KR4 w - - 2 18",
+                "r2q1rk1/1b3pb1/pp4n1/2p1p2Q/2B1P3/2P1B3/PP1N1PP1/2K4R b - - 3 18",
+                "r2qr1k1/1b3pb1/pp4n1/2p1p2Q/2B1P3/2P1B3/PP1N1PP1/2K4R w - - 4 19",
+                "r2qr1k1/1b3pb1/pp4Q1/2p1p3/2B1P3/2P1B3/PP1N1PP1/2K4R b - - 0 19"
+            ],
+            [
+                "r3k2r/ppp2p2/5n2/2bq2p1/1P1p2pP/2PB4/P4PP1/RN1Q1RK1 b kq - 0 17",
+                "2kr3r/ppp2p2/5n2/2bq2p1/1P1p2pP/2PB4/P4PP1/RN1Q1RK1 w - - 1 18"
+            ],
+            [
+                "2kr1bnr/ppp2ppp/2np4/8/3PPBbq/2N2N2/PPP1K1PP/R2Q1B1R w - - 1 8",
+                "2kr1bnr/ppp2ppp/2np4/8/3PPBbq/2N1KN2/PPP3PP/R2Q1B1R b - - 2 8"
+            ],
+            [
+                "r2qkn1r/1b2b1p1/p3p3/1p1pPp1p/1P1N1P2/P2PB3/4Q1PP/2RN1RK1 w kq - 0 19",
+                "r2qkn1r/1b2b1p1/p3p3/1p1pPp1p/1P1N1P2/P1NPB3/4Q1PP/2R2RK1 b kq - 1 19",
+                "r2q1n1r/1b2bkp1/p3p3/1p1pPp1p/1P1N1P2/P1NPB3/4Q1PP/2R2RK1 w - - 2 20",
+                "r2q1n1r/1b2bkp1/p3p3/1p1pPp1p/1P1N1P2/P2PB3/4Q1PP/1NR2RK1 b - - 3 20",
+                "r2q1n1r/1b2bk2/p3p1p1/1p1pPp1p/1P1N1P2/P2PB3/4Q1PP/1NR2RK1 w - - 0 21",
+                "r2q1n1r/1b2bk2/p3p1p1/1p1pPp1p/1P1N1P2/P2PB3/3NQ1PP/2R2RK1 b - - 1 21",
+                "r2q3r/1b1nbk2/p3p1p1/1p1pPp1p/1P1N1P2/P2PB3/3NQ1PP/2R2RK1 w - - 2 22",
+                "r2q3r/1b1nbk2/p3p1p1/1p1pPp1p/1P1N1P2/PN1PB3/4Q1PP/2R2RK1 b - - 3 22",
+                "2rq3r/1b1nbk2/p3p1p1/1p1pPp1p/1P1N1P2/PN1PB3/4Q1PP/2R2RK1 w - - 4 23",
+                "2rq3r/1b1nbk2/p3p1p1/Np1pPp1p/1P1N1P2/P2PB3/4Q1PP/2R2RK1 b - - 5 23"
+            ],
+            [
+                "r1b2r1k/ppp1q1pp/2n1pb2/2P5/2BPpp2/P3PPB1/1PQ3PP/2KR2NR w - - 0 14",
+                "r1b2r1k/ppp1q1pp/2n1pb2/2P5/2BPQp2/P3PPB1/1P4PP/2KR2NR b - - 0 14",
+                "r1b2r1k/ppp1q1pp/2n1pb2/2P5/2BPQ3/P3PPp1/1P4PP/2KR2NR w - - 0 15",
+                "r1b2r1k/ppp1q1pp/2n1pb2/2P5/2BPQ3/P3PPP1/1P4P1/2KR2NR b - - 0 15",
+                "r1b2r1k/ppp1q2p/2n1pbp1/2P5/2BPQ3/P3PPP1/1P4P1/2KR2NR w - - 0 16",
+                "r1b2r1k/ppp1q2p/2n1pbQ1/2P5/2BP4/P3PPP1/1P4P1/2KR2NR b - - 0 16"
+            ],
+            [
+                "rqb2rk1/3nbppp/p2pp3/6P1/1p1BPP2/2NB1Q2/PPP4P/2KR3R w - - 0 16",
+                "rqb2rk1/3nbppp/p2pp3/3N2P1/1p1BPP2/3B1Q2/PPP4P/2KR3R b - - 1 16",
+                "rqb2rk1/3nbppp/p2p4/3p2P1/1p1BPP2/3B1Q2/PPP4P/2KR3R w - - 0 17",
+                "rqb2rk1/3nbppp/p2p4/3P2P1/1p1B1P2/3B1Q2/PPP4P/2KR3R b - - 0 17"
+            ],
+            [
+                "6k1/1b4pp/p2q4/3PR1P1/3BQ2P/1PP5/1P1K4/5r2 w - - 1 34",
+                "6k1/1b4pp/p2q4/2BPR1P1/4Q2P/1PP5/1P1K4/5r2 b - - 2 34",
+                "6k1/1b4pp/p7/2qPR1P1/4Q2P/1PP5/1P1K4/5r2 w - - 0 35",
+                "4R1k1/1b4pp/p7/2qP2P1/4Q2P/1PP5/1P1K4/5r2 b - - 1 35",
+                "4Rrk1/1b4pp/p7/2qP2P1/4Q2P/1PP5/1P1K4/8 w - - 2 36",
+                "4Rrk1/1b4pp/p3Q3/2qP2P1/7P/1PP5/1P1K4/8 b - - 3 36",
+                "4Rr1k/1b4pp/p3Q3/2qP2P1/7P/1PP5/1P1K4/8 w - - 4 37",
+                "4Rr1k/1b3Qpp/p7/2qP2P1/7P/1PP5/1P1K4/8 b - - 5 37"
+            ],
+            [
+                "1R6/2nb2kp/3p2p1/3PN2n/1P2Pp2/5N1P/1Q3PPK/r2q4 w - - 3 41",
+                "1R6/2nb2kp/3p2p1/3P3n/1P2PpN1/5N1P/1Q3PPK/r2q4 b - - 4 41",
+                "1R6/2nb1k1p/3p2p1/3P3n/1P2PpN1/5N1P/1Q3PPK/r2q4 w - - 5 42",
+                "1R6/2nb1k1p/3p2pN/3P3n/1P2Pp2/5N1P/1Q3PPK/r2q4 b - - 6 42",
+                "1R6/2nbk2p/3p2pN/3P3n/1P2Pp2/5N1P/1Q3PPK/r2q4 w - - 7 43",
+                "1R4N1/2nbk2p/3p2p1/3P3n/1P2Pp2/5N1P/1Q3PPK/r2q4 b - - 8 43",
+                "1R4N1/2nb1k1p/3p2p1/3P3n/1P2Pp2/5N1P/1Q3PPK/r2q4 w - - 9 44",
+                "1R4N1/2nb1k1p/3p2p1/3P2Nn/1P2Pp2/7P/1Q3PPK/r2q4 b - - 10 44"
+            ],
+            [
+                "r1b2rk1/p2nbppp/q1pN1n2/1p6/2BQ4/5N2/PPPB1PPP/2KR3R w - - 2 13",
+                "r1b2rk1/p2nbppp/q1p2n2/1p3N2/2BQ4/5N2/PPPB1PPP/2KR3R b - - 3 13",
+                "r1bb1rk1/p2n1ppp/q1p2n2/1p3N2/2BQ4/5N2/PPPB1PPP/2KR3R w - - 4 14",
+                "r1bb1rk1/p2n1ppp/q1p2n2/1p3N2/2B4Q/5N2/PPPB1PPP/2KR3R b - - 5 14",
+                "r1bb1rk1/p2n1ppp/q1p2n2/5N2/2p4Q/5N2/PPPB1PPP/2KR3R w - - 0 15",
+                "r1bb1rk1/p2n1ppp/q1p2n2/5NQ1/2p5/5N2/PPPB1PPP/2KR3R b - - 1 15"
+            ],
+            [
+                "r1bb1r1k/p4ppp/2p2n1N/7Q/2p5/2B2N2/qPP2PPP/2KR3R w - - 2 19",
+                "r1bb1r1k/p4Qpp/2p2n1N/8/2p5/2B2N2/qPP2PPP/2KR3R b - - 0 19"
+            ],
+            [
+                "r1br1knQ/2q3pR/p2bp3/1p1pnp2/5B2/1NN2P2/PPP5/2KR1B2 w - - 0 24",
+                "r1br1knQ/2q3pR/p2bp2B/1p1pnp2/8/1NN2P2/PPP5/2KR1B2 b - - 1 24",
+                "r1b2knQ/2qr2pR/p2bp2B/1p1pnp2/8/1NN2P2/PPP5/2KR1B2 w - - 2 25",
+                "r1b2knQ/2qr2pR/p2bp2B/1B1pnp2/8/1NN2P2/PPP5/2KR4 b - - 0 25",
+                "r1b2knQ/2q2rpR/p2bp2B/1B1pnp2/8/1NN2P2/PPP5/2KR4 w - - 1 26",
+                "r1b2knQ/2q2rpR/p2bp2B/1B1pnp2/8/1NN2P2/PPP5/2K3R1 b - - 2 26"
+            ],
+            [
+                "rnbqkbr1/5p1p/p2pp3/5N2/Np2n3/1B6/PPP3PP/R1BQ1RK1 w q - 1 13",
+                "rnbqkbr1/5p1p/p2pp3/3B1N2/Np2n3/8/PPP3PP/R1BQ1RK1 b q - 2 13"
+            ],
+            [
+                "r1b2rk1/3nppbp/p2p1np1/qppN4/2PPP3/4BP2/PP1QN1PP/1K1R1B1R b - - 1 11",
+                "r1b2rk1/3nppbp/p2p2p1/qppn4/2PPP3/4BP2/PP1QN1PP/1K1R1B1R w - - 0 12",
+                "r1b2rk1/3nppbp/p2p2p1/Qppn4/2PPP3/4BP2/PP2N1PP/1K1R1B1R b - - 0 12",
+                "r1b2rk1/3nppbp/p2p2p1/Qpp5/2PPP3/4nP2/PP2N1PP/1K1R1B1R w - - 0 13",
+                "r1b2rk1/3nppbp/p2p2p1/Qpp5/2PPP3/4nP2/PP2N1PP/1KR2B1R b - - 1 13",
+                "r1b2rk1/3nppbp/p2p2p1/Qpp5/2nPP3/5P2/PP2N1PP/1KR2B1R w - - 0 14",
+                "r1b2rk1/3nppbp/p2p2p1/Qpp5/2RPP3/5P2/PP2N1PP/1K3B1R b - - 0 14",
+                "r1b2rk1/3nppbp/p2p2p1/Q1p5/2pPP3/5P2/PP2N1PP/1K3B1R w - - 0 15"
+            ],
+            [
+                "2r3k1/4ppbp/3p2p1/8/4P3/QPr2P2/1p4PP/1K1R4 b - - 2 29",
+                "2r3k1/4ppbp/3p2p1/8/4P3/QP3P2/1p4PP/1KrR4 w - - 3 30",
+                "2r3k1/4ppbp/3p2p1/8/4P3/QP3P2/1p4PP/1KR5 b - - 0 30",
+                "6k1/4ppbp/3p2p1/8/4P3/QP3P2/1p4PP/1Kr5 w - - 0 31"
             ]
 ]
