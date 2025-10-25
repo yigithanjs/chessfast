@@ -27,6 +27,7 @@ export default function PuzzleRushBlitz({ puzzles }) {
   const correctSoundRef = useRef(null);
   const wrongSoundRef = useRef(null);
   const countdownSoundRef = useRef(null);
+  const hasPrimedRef = useRef(false);
 
   const SOUND_VOLUME = 0.2;
 
@@ -38,6 +39,29 @@ export default function PuzzleRushBlitz({ puzzles }) {
     el.play().catch(() => {});
   }, []);
 
+  const primeSounds = useCallback(() => {
+    if (hasPrimedRef.current) return;
+    hasPrimedRef.current = true;
+    const sounds = [correctSoundRef.current, wrongSoundRef.current, countdownSoundRef.current];
+
+    sounds.forEach((audio) => {
+      if (!audio) return;
+      const resetAudio = () => {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.volume = SOUND_VOLUME;
+      };
+
+      audio.volume = 0;
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.then === 'function') {
+        playPromise.then(resetAudio).catch(resetAudio);
+      } else {
+        resetAudio();
+      }
+    });
+  }, []);
+
 
   useEffect(() => {
     return () => {
@@ -46,6 +70,16 @@ export default function PuzzleRushBlitz({ puzzles }) {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const handlePointerDown = () => {
+      primeSounds();
+      window.removeEventListener('pointerdown', handlePointerDown);
+    };
+
+    window.addEventListener('pointerdown', handlePointerDown);
+    return () => window.removeEventListener('pointerdown', handlePointerDown);
+  }, [primeSounds]);
 
   // ——— Pre-game countdown ———
   useEffect(() => {
