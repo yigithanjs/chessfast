@@ -231,8 +231,8 @@ export default function PuzzleRushBrain({
             darkSquareStyle: { backgroundColor: "#b58863" },
             lightSquareStyle: { backgroundColor: "#f0d9b5" },
             onPieceDrop: handlePieceDrop,
-            animationDurationInMs: 200,
-            showAnimations: true,
+            animationDurationInMs: stepIndex > 0 ? 200 : 0, // no tween for first frame
+            showAnimations: stepIndex > 0,
           }}
         />
       )}
