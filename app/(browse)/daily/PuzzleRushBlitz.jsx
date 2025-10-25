@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from 'next/link';
 import PuzzleRushBrain from './PuzzleRushBrain';
 
@@ -23,6 +23,21 @@ export default function PuzzleRushBlitz({ puzzles }) {
   const [mistakeCount, setMistakeCount] = useState(0);
 
   const [failedPuzzles, setFailedPuzzles] = useState([]);
+
+  const correctSoundRef = useRef(null);
+  const wrongSoundRef = useRef(null);
+  const countdownSoundRef = useRef(null);
+
+  const SOUND_VOLUME = 0.2;
+
+  const playSound = useCallback((soundRef) => {
+    const el = soundRef.current;
+    if (!el) return;
+    el.volume = SOUND_VOLUME; // quieter than the default 1.0
+    el.currentTime = 0;
+    el.play().catch(() => {});
+  }, []);
+
 
   useEffect(() => {
     return () => {
@@ -50,6 +65,12 @@ export default function PuzzleRushBlitz({ puzzles }) {
 
     return () => clearInterval(id);
   }, [phase]);
+
+  useEffect(() => {
+    if (phase !== 'countdown') return;
+    if (count <= 0) return;
+    playSound(countdownSoundRef);
+  }, [phase, count, playSound]);
 
   // ——— START! flash ———
   useEffect(() => {
@@ -98,6 +119,7 @@ export default function PuzzleRushBlitz({ puzzles }) {
   }
 
   function onCorrect() {
+    playSound(correctSoundRef)
     setScore((p) => p + 1);
     setCombo((prev) => {
       const next = prev + 1;
@@ -108,6 +130,7 @@ export default function PuzzleRushBlitz({ puzzles }) {
   }
 
   function onWrong(failure) {
+    playSound(wrongSoundRef)
     setCombo((prev) => {
       setHighestCombo((currentMax) => (prev > currentMax ? prev : currentMax));
       return 0;
@@ -151,8 +174,13 @@ export default function PuzzleRushBlitz({ puzzles }) {
   const preGameLabel = showStart ? 'START!' : count;
   const comboHighlightClass = `transition-colors duration-150 text-lg ${comboHighlight ?? ''}`;
 
+  
+
   return (
     <>
+      <audio ref={correctSoundRef} src="/sfx/correctSound.mp3" preload="auto" />
+      <audio ref={wrongSoundRef} src="/sfx/wrongSound.mp3" preload="auto" />
+      <audio ref={countdownSoundRef} src="/sfx/countdown.mp3" preload="auto" />
       <main className='flex flex-col items-center lg:items-stretch lg:flex-row justify-center mt-9 lg:mt-20 mb-20 relative'>
         {phase === 'ended' && <ResultPage score={score} highestCombo={highestCombo} resetGame={resetGame} mistakeCount={mistakeCount} failedPuzzles={failedPuzzles}/>} 
         <section className='relative'>
