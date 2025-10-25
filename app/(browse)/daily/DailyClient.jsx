@@ -205,8 +205,8 @@ export default function DailyClient() {
               style={{ background: "#54318bff "}}>
                 <span className="text-3xl xl:text-4xl 2xl:text-5xl">🔥</span>
                 <div className="text-center">
-                  <h1 className="mb-4 text-lg font-md xl:text-xl 2xl:text-2xl font-bold">3 MINUTE BLITZ</h1>
-                  <p className="px-10 text-white/70">3 minutes. Endless classics.</p>
+                  <h1 className="mb-4 text-lg font-md xl:text-xl 2xl:text-2xl font-bold">3 MINUTE CHALLENGE</h1>
+                  <p className="px-10 text-white/70">Endless classics with a timer</p>
                 </div>
                 
                 <Link href={"daily/threeMinutesRush"} className="hover:bg-neutral-800 transition xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
@@ -217,7 +217,7 @@ export default function DailyClient() {
                 <span className="text-3xl xl:text-4xl 2xl:text-5xl">🏕️</span>
                 <div className="text-center">
                   <h1 className="mb-4 text-lg font-md xl:text-xl 2xl:text-2xl font-bold">SURVIVAL</h1>
-                  <p className="px-10 text-white/70">20 iconic positions. One life</p>
+                  <p className="px-10 text-white/70">20 iconic positions. 3 Lives</p>
                 </div>
                 <Link href={"daily/survival"} className="hover:bg-neutral-800 transition xl:py-3 xl:rounded-[100px] bg-neutral-950 w-[120px] xl:w-[150px] text-lg py-1 text-center rounded-2xl">Go</Link>
               </article>
